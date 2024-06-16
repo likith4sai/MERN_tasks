@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Task-4</title>
+        <style>
+            #nav a{
+              position:absolute;
+              left: -80px;
+              transition: 0.5s;
+              padding: 15px;
+              width: 100px;
+              text-decoration: none;
+              font-size: 20px;
+              color: white;
+              border-radius: 0 5px 5px  0; 
+            }
+            #nav a:hover {
+                left: 0;
+            }
+            #java {
+                top: 20px;
+                background-color: green;
+            }
+            #html {
+                top: 80px;
+                background-color: blue;
+            }
+            #css {
+                top: 140px;
+                background-color: red;
+            }
+            #bs {
+                top: 200px;
+                background-color: grey;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="nav" class="sidenav">
+            <a href="#j" id="java">JAVA</a>
+            <a href="#h" id="html">HTML</a>
+            <a href="#c" id="css">CSS</a>
+            <a href="#b" id="bs">PYTHON</a>
+        </div>
+        <div style="margin-left:80px;">
+            <h2>Hoverable Sidnav Buttons</h2>
+            <p>Hover over the buttons in the left side navigation to open them.</p>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Task-2</title>
+    <style>
+
+h2 {
+    text-align: center;
+    font: Arial;
+}
+
+.container {
+    display:flex;
+    padding: 20px;
+}
+
+.vertical-nav {
+    width: 200px;
+    background-color: lightblue;
+    padding: 0;
+    border: 1px solid #ccc;
+}
+
+.vertical-nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.vertical-nav ul li {
+    text-align: center;
+}
+
+.vertical-nav ul li a {
+    display: block;
+    color: blue;
+    padding: 10px;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.vertical-nav ul li a:hover, .vertical-nav ul li a.active {
+    background-color: orange;
+    color: white;
+}
+
+.content {
+    flex-grow: 1;
+    margin-left: 20px;
+}
+
+.horizontal-nav {
+    background-color: lightgray;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+}
+
+.horizontal-nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.horizontal-nav ul li {
+    flex: 1;
+    text-align: center;
+}
+
+.horizontal-nav ul li a {
+    display: block;
+    color: blue;
+    padding: 10px;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.horizontal-nav ul li a:hover, .horizontal-nav ul li a.active {
+    background-color: gray;
+    color: white;
+}
+    </style>
+</head>
+<body>
+    <h2>Vertical Navigation Bar</h2>
+    <div class="container">
+        <nav class="vertical-nav">
+            <ul>
+                <li><a class="active" href="#home">Home</a></li>
+                <li><a href="#java">Java</a></li>
+                <li><a href="#css">CSS</a></li>
+                <li><a href="#html">HTML</a></li>
+                <li><a href="#bootstrap">Bootstrap</a></li>
+            </ul>
+        </nav>
+        <div class="content">
+            <h2>Horizontal Navigation Bar</h2>
+            <nav class="horizontal-nav">
+                <ul>
+                    <li><a class="active" href="#home">Home</a></li>
+                    <li><a href="#java">Java</a></li>
+                    <li><a href="#html">HTML</a></li>
+                    <li><a href="#css">CSS</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</body>
+</html>
