@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Task2</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+        li{
+            display:inline;
+        }
+        #navright{
+            padding : 1px;
+            border : 1px solid white;
+            margin-top : 5px;
+            display : inline ;
+        }
+        img{
+            width : 100% ;
+            height : auto ;
+        }
+        h1{
+            color : #080c24;
+            padding-top : auto ;
+            padding-bottom: auto;
+        }
+        #navbar,#right,#left,select{
+            background-color: #080c24 ;
+        }
+        button{
+            background-color: #080c24;
+        }
+        #middle{
+            color :#080c24;
+        }
+        .card{
+            flex-direction: row;
+            padding : 0px;
+        }
+        .card-body{
+            padding-top: 20%;
+        }
+        select{
+            border:none;
+        }
+        #outer{
+            background-color: lightgray;
+            padding-left:3%;
+            padding-right:3%;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <div id="outer">
+    <div class="container-fluid bg-warning">
+        <div class="row px-4">
+            <h1 class="col-6 px-4">Builderz</h1>
+            <a href="#" class="col-2"><img src="img3.jpg"></a>
+            <a href="#" class="col-2"><img src="img7.jpg"></a>
+            <a href="#" class="col-2"><img src="img6.jpg"></a>
+        </div>
+        <div class="row mx-4 py-3" id = "navbar">
+            <ul class="col-10">
+                <li class="text-light px-2">HOME</li>
+                <li class="text-light px-2">ABOUT</li>
+                <li class="text-light px-2">SERVICE</li>
+                <li class="text-light px-2">TEAM</li>
+                <li class="text-light px-2">PROJECT</li>
+                <li class="text-light px-2">
+                    <select class="text-light">
+                        <option>PAGES</option>
+                        <option>GALLERY</option>
+                        <option>CART</option>
+                    </select>
+                </li>
+                <li class="text-light px-2">CONTACT</li>
+            </ul>
+            <button class = "col-1 btn btn-outline-light"> Get A Quote</button>
+        </div>
+    </div>
+    <img src="img5.jpg" class="img-fluid" alt="...">
+    <div class="row">
+        <div class="card col-4 ">
+            <img src="img4.jpg" class="card-img-top" alt="middle">
+            <div class="card-body" id="left">
+              <h3 class="card-title text-warning">Expert Worker</h5>
+              <p class="card-text text-warning">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eligendi ipsum atque.</p>           
+            </div>
+        </div>
+        <div class="card col-4">
+            <img src="img1.jpg" class="card-img-top" alt="middle">
+            <div class="card-body bg-warning" id="left">
+              <h3 class="card-title ">Quality work</h5>
+              <p class="card-text ">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eligendi ipsum atque.</p>           
+            </div>
+        </div>
+        <div class="card col-4">
+            <img src="img2.jpg" class="card-img-top" alt="middle">
+            <div class="card-body" id="left">
+              <h3 class="card-title text-warning">24/7 support</h5>
+              <p class="card-text text-warning">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eligendi ipsum atque.</p>           
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

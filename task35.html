@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Validation Example</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <style>
+    .invalid-feedback {
+      display: block;
+    }
+    .form-control.is-invalid + .invalid-feedback {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div class="container mt-5">
+    <form>
+      <div class="form-group">
+        <label for="firstName">First Name</label>
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text"><i class="fas fa-user"></i></span>
+          </div>
+          <input type="text" class="form-control is-invalid" id="firstName" placeholder="First Name">
+          <div class="input-group-append">
+            <span class="input-group-text"><i class="fas fa-times"></i></span>
+          </div>
+          <div class="invalid-feedback">Please supply your first name</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="lastName">Last Name</label>
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text"><i class="fas fa-user"></i></span>
+          </div>
+          <input type="text" class="form-control is-invalid" id="lastName" placeholder="Last Name">
+          <div class="input-group-append">
+            <span class="input-group-text"><i class="fas fa-times"></i></span>
+          </div>
+          <div class="invalid-feedback">Please supply your last name</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="email">E-Mail</label>
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+          </div>
+          <input type="email" class="form-control is-invalid" id="email" placeholder="E-Mail Address">
+          <div class="input-group-append">
+            <span class="input-group-text"><i class="fas fa-times"></i></span>
+          </div>
+          <div class="invalid-feedback">Please supply your email address</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="phone">Phone #</label>
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text"><i class="fas fa-phone"></i></span>
+          </div>
+          <input type="text" class="form-control is-invalid" id="phone" placeholder="(845)555-1212">
+          <div class="input-group-append">
+            <span class="input-group-text"><i class="fas fa-times"></i></span>
+          </div>
+          <div class="invalid-feedback">Please supply your phone number</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="address">Address</label>
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text"><i class="fas fa-home"></i></span>
+          </div>
+          <input type="text" class="form-control is-invalid" id="address" placeholder="Address">
+          <div class="input-group-append">
+            <span class="input-group-text"><i class="fas fa-times"></i></span>
+          </div>
+          <div class="invalid-feedback">Please supply your street address</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="city">City</label>
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text"><i class="fas fa-city"></i></span>
+          </div>
+          <input type="text" class="form-control is-invalid" id="city" placeholder="City">
+          <div class="input-group-append">
+            <span class="input-group-text"><i class="fas fa-times"></i></span>
+          </div>
+          <div class="invalid-feedback">Please supply your city</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="state">State</label>
+        <select class="form-control" id="state">
+          <option>Please select your state</option>
+          <option>State 1</option>
+          <option>State 2</option>
+          <option>State 3</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Do you have hosting?</label>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="hosting" id="hostingYes" value="yes">
+          <label class="form-check-label" for="hostingYes">Yes</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="hosting" id="hostingNo" value="no">
+          <label class="form-check-label" for="hostingNo">No</label>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="projectDescription">Project Description</label>
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text"><i class="fas fa-pencil-alt"></i></span>
+          </div>
+          <input type="text" class="form-control" id="projectDescription" placeholder="Project Description">
+        </div>
+      </div>
+      <button type="submit" class="btn btn-warning">Send <i class="fas fa-paper-plane"></i></button>
+    </form>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
