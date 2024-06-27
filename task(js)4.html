@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Task-4</title>
+</head>
+<body>
+    <button onclick="showDate()">show date</button>
+    <p id="date"></p>
+    <button onclick="showTime()">show Time</button>
+    <p id="time"></p>
+    <script>
+        function showDate() {
+            const currentDate = new Date();
+            const options = { year: 'numeric', month: 'long', day: 'numeric' };
+            document.getElementById('date').innerHTML = currentDate.toLocaleDateString('en-GB', options);
+        }
+
+        function showTime() {
+            const currentTime = new Date();
+            document.getElementById('time').innerHTML = currentTime.toString();
+        }
+    </script>
+</body>
+</html>

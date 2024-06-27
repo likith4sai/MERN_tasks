@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Task-2</title>
+    </head>
+    <body style="text-align: center;">
+        <h1><b>ALPHABETICAL ORDER</b></h1>
+        <p>Enter a word and it will be displayed in alphabetical order</p>
+        <input type="text" id="wordInput" placeholder="Enter a word">
+        <button onclick="alphabeticalOrder()">Alphabetical Order</button>
+        <p id="alphabetical"></p>
+        <script>
+            function alphabeticalOrder() {
+                let word = document.getElementById('wordInput').value;
+                let sortedWord = word.split('').sort().join('');
+                document.getElementById('alphabetical').innerText = `Alphabetical Order: ${sortedWord}`;
+            }
+        </script>
+    </body>
+</html>

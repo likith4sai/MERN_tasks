@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Task-3(calculator)</title>
+    <style>
+        body {
+            text-align: center;
+        }
+        .container {
+            display: inline-block;
+            padding: 20px;
+            border: 1px solid #000;
+            text-align: left;
+            font-family: Arial, sans-serif;
+        }
+        .container input, .container button {
+            margin: 5px 0;
+            padding: 5px;
+        }
+        .container label {
+            display: inline-block;
+            width: 100px;
+        }
+        .container button:hover{
+            border-color:cornflowerblue;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 style="text-align: center;">Calculator</h1>
+        <label>1st Number :</label>
+        <input type="text" id="firstNumber" placeholder="Enter first number"><br>
+        
+        <label>2nd Number :</label>
+        <input type="text" id="secondNumber" placeholder="Enter second number"><br>
+            <button onclick="multiply()">Multiply</button>
+            <button onclick="divide()">Divide</button>
+        <p>The Result Is :</p>
+        <p id="result"></p>
+    </div>
+
+    <script>
+        function multiply() {
+            let firstNumber = parseFloat(document.getElementById('firstNumber').value);
+            let secondNumber = parseFloat(document.getElementById('secondNumber').value);
+            let result = firstNumber * secondNumber;
+            document.getElementById('result').innerText = result;
+        }
+
+        function divide() {
+            let firstNumber = parseFloat(document.getElementById('firstNumber').value);
+            let secondNumber = parseFloat(document.getElementById('secondNumber').value);
+            if (secondNumber !== 0) {
+                let result = firstNumber / secondNumber;
+                document.getElementById('result').innerText = result;
+            } else {
+                document.getElementById('result').innerText = "Cannot divide by zero";
+            }
+        }
+    </script>
+</body>
+</html>

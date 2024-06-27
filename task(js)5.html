@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task-5(Form Validation)</title>
+    <style>
+        table {
+            display: inline-block;
+            padding: 20px;
+            border: 1px solid #000;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            margin-left: 600px;
+            margin-top: 200px;
+            padding-right: 100px;
+        }
+        .error {
+            border: 2px solid red;
+        }
+        .error-message {
+            color: red;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <form id="myForm" onsubmit="return validateForm()">
+            <tr>
+                <td><label for="name">Name:</label></td>
+                <td> <input type="text" id="name" name="name">
+                    <span id="nameError" class="error-message"></span></td>
+            </tr>
+             <tr>
+                <td><label for="email">Email:</label></td>
+                <td> <input type="text" id="email" name="email">
+                    <span id="emailError" class="error-message"></span>
+                </td>
+             </tr>
+             <tr>
+                <td><label for="website">Website:</label></td>
+                <td><input type="text" id="website" name="website">
+                    <span id="websiteError" class="error-message"></span>
+                </td>
+             </tr>
+              <tr>
+                <td><label for="message">Message:</label></td>
+                <td> <textarea id="message" name="message"></textarea>
+                    <span id="messageError" class="error-message"></span>
+                </td>
+              </tr>
+              <tr colspan=2>
+                <td><input type="submit" value="Submit"></td>
+              </tr>
+        </form>
+    </table>
+    <script>
+        function validateForm() {
+            let isValid = true;
+            clearErrors();
+            let name = document.getElementById('name').value;
+            if (name === "") {
+                showError('name', 'This field is required');
+                isValid = false;
+            }
+            let email = document.getElementById('email').value;
+            if (email === "") {
+                showError('email', 'A valid email address is required');
+                isValid = false;
+            } else if (!validateEmail(email)) {
+                showError('email', 'Invalid email format');
+                isValid = false;
+            }
+            let website = document.getElementById('website').value;
+            if (website === "") {
+                showError('website', 'A valid url is required');
+                isValid = false;
+            } else if (!validateURL(website)) {
+                showError('website', 'Invalid URL format');
+                isValid = false;
+            }
+            let message = document.getElementById('message').value;
+            if (message === "") {
+                showError('message', 'This field is required');
+                isValid = false;
+            }
+
+            return isValid;
+        }
+
+        function showError(fieldId, errorMessage) {
+            let field = document.getElementById(fieldId);
+            let errorElement = document.getElementById(fieldId + 'Error');
+            field.classList.add('error');
+            errorElement.textContent = errorMessage;
+        }
+
+        function clearErrors() {
+            let errorFields = document.querySelectorAll('.error');
+            errorFields.forEach(field => {
+                field.classList.remove('error');
+            });
+
+            let errorMessages = document.querySelectorAll('.error-message');
+            errorMessages.forEach(error => {
+                error.textContent = "";
+            });
+        }
+
+        function validateEmail(email) {
+            const re = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+            return re.test(email);
+        }
+
+        function validateURL(url) {
+            const re = /^(https?:\/\/)?([\da-z.-]+)\.([a-z.]{2,6})(\/[\w .-])\/?$/;
+            return re.test(url);
+        }
+    </script>
+</body>
+</html>

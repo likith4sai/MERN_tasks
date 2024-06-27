@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Task-6(Instagram Login)</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <style>
+            .box {
+                      background-color: #f0f0f0;
+                      border: 1px;
+                      padding: 10px;
+                       margin: 20px;
+                       text-align: center;
+                       margin-top: 150px;
+                       
+            }
+            h1 {
+                font-style: italic;
+            }
+            .input-container {
+                display: -ms-flexbox; 
+                display:flex;
+                width: 100%;
+                 margin-bottom: 15px;
+                 margin-left: 50px;
+            }
+            .icon {
+                 padding: 10px;
+                  background: #cac7c7;
+                  color:black;
+                   min-width: 20px;
+                   text-align: center;
+             }
+             .btn {
+               background-color: dodgerblue;
+               color: white;
+                 padding: 15px 20px;
+                border: none;
+                cursor: pointer;
+                  width: 65%;
+                 opacity: 0.9;
+                 margin-right: 25px;
+             }
+             .btn:hover {opacity: 1;}
+             .mar {
+                   margin-top: 20px;
+                   margin-left: 450px;
+                   margin-right: 450px;
+
+             }
+        </style>
+    </head>
+    <body>
+        <div class="mar">
+        <div class="box">
+            <h1>Instagram</h1>
+            <form id="insta" onsubmit="return validateInsta()">
+            <div class="input-container">
+                <i class="fa fa-user icon"></i>
+                <input type="text" id="user" class="input-field" placeholder="Username">
+            </div>
+            <div class="input-container">
+                <i class="fa fa-lock icon"></i>
+                <input type="password" id="pass" class="input-field" placeholder="Password">
+            </div>
+            <button type="submit" class="btn">Login</button> <br>  <br>
+            <label style="margin-right:20px;"">
+                <input type="checkbox" name="remember">Remember me
+            </label>
+            <a href="#" style="color: blue;">Forgot Password?</a>
+            </form>
+        </div>
+        <P style="margin-left:90px ;">Don't have an account? <a href="#" style="color: blue;">Sign up here</a></P>
+        </div>
+        
+        <script>
+            function validateInsta() {
+                var username = document.getElementById("user").value;
+                var password = document.getElementById("pass").value;
+                
+                if (username == "" || password == "") {
+                    alert("Please fill in both username and password.");
+                    return false;
+                }
+                
+                if (username.length < 3) {
+                    alert("Username must be at least 3 characters.");
+                    return false;
+                }
+                
+                if (password.length < 8) {
+                    alert("Password must be at least 8 characters.");
+                    return false;
+                }
+                
+                return true;
+            }
+        </script>
+    </body>
+</html>

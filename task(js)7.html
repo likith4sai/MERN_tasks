@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Task-7</title>
+  <style>
+    #train {
+      position: relative;
+      left: 0;
+      animation-name: moveTrain;
+      animation-duration: 15s;
+      animation-iteration-count: infinite;
+      animation-play-state: paused; 
+    }
+    #button {text-align: center;}
+    #play-btn {
+        background-color: green;
+        color: white;
+        padding: 5px;
+        border-radius: 25px;
+        cursor: pointer;
+        width: 5%;
+    }
+    #pause-btn {
+        background-color: red;
+        color: white;
+        padding: 5px;
+        border-radius: 25px;
+        cursor: pointer;
+        width: 5%;
+    }
+    #play-btn:hover {
+        background-color: red;
+    }
+    #pause-btn:hover {
+        background-color: green;
+    }
+    @keyframes moveTrain {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(100%);
+      }
+    }
+  </style>
+</head>
+<body>
+    <div id="button">
+   <h1>Control the train</h1>
+  <button id="play-btn">Play</button>
+  <button id="pause-btn">Pause</button> <br>
+    </div>
+  <img id="train" src="train.png" alt="Train Image" />
+
+  <script>
+    const playBtn = document.getElementById('play-btn');
+    const pauseBtn = document.getElementById('pause-btn');
+    const train = document.getElementById('train');
+
+    playBtn.addEventListener('click', () => {
+      train.style.animationPlayState = 'running';
+    });
+
+    pauseBtn.addEventListener('click', () => {
+      train.style.animationPlayState = 'paused';
+    });
+  </script>
+</body>
+</html>

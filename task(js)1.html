@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Task-1</title>
+    </head>
+    <body style="text-align: center;">
+        <h1><b>NUMBER REVERSE</b></h1>
+        <p>The number you write will be reversed</p>
+        <input type="number" id="numInput" placeholder="Enter a number">
+        <button onclick="reverseNumber()">Reverse</button>
+        <p id="reverse"></p>
+        <script>
+            function reverseNumber(){
+                let number=document.getElementById('numInput').value;
+                let reverseNumber = number.toString().split('').reverse().join('');
+                document.getElementById('reverse').innerText = `Reversed Number: ${reverseNumber}`;
+            }
+        </script>
+    </body>
+</html>

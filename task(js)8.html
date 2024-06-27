@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Task-8(Form)</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: white;
+        margin: 0;
+      }
+      .box {
+        text-align: center;
+        background: linear-gradient(to right, red, yellow, orange, pink);
+        padding: 20px;
+        border-radius: 10px;
+      }
+      #register {
+        background-color: red;
+        color: white;
+        padding: 5px;
+        border-radius: 25px;
+        width: 100px;
+        cursor: pointer;
+      }
+      #register:hover {
+        background-color: green;
+      }
+      h1 {
+        text-align: center;
+        color: cornflowerblue;
+      }
+      .error {
+        color: red;
+        font-size: 12px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <h1><b>Registration Form</b></h1>
+      <form>
+        <label for="fname"><b>First Name</b></label>
+        <input type="text" id="fname" placeholder="Enter First Name">
+        <span class="error" id="fname-error"></span><br><br>
+        <label for="lname"><b>Last Name</b></label>
+        <input type="text" id="lname" placeholder="Enter Last Name">
+        <span class="error" id="lname-error"></span><br><br>
+        <label for="mail"><b>Email</b></label>
+        <input type="email" id="mail" placeholder="Enter Email">
+        <span class="error" id="mail-error"></span><br><br>
+        <label for="password"><b>Password</b></label>
+        <input type="password" id="password" placeholder="Enter Password">
+        <span class="error" id="password-error"></span><br><br>
+        <label for="repassword"><b>Re-enter Password</b></label>
+        <input type="password" id="repassword" placeholder="Enter Password">
+        <span class="error" id="repassword-error"></span><br><br>
+        <label for="gender"><b>Gender</b></label>
+        <input type="radio" id="male" name="gender" value="male">
+        <label for="male">Male</label>
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female">Female</label>
+        <span class="error" id="gender-error"></span><br><br>
+        <label for="age"><b>Age</b></label>
+        <input type="number" id="age" placeholder="Enter Age">
+        <span class="error" id="age-error"></span><br><br>
+        <label for="pnum"><b>Phone Number</b></label>
+        <input type="tel" id="pnum" placeholder="Enter Phone Number">
+        <span class="error" id="pnum-error"></span><br><br>
+        <label for="address"><b>Address</b></label>
+        <textarea id="address" placeholder="Enter Address"></textarea>
+        <span class="error" id="address-error"></span><br><br>
+        <label for="state"><b>State</b></label>
+        <select id="state" aria-placeholder="Choose Your State">
+          <option value="Choose_state">Choose Your State</option>
+          <option value="Andhra Pradesh">Andhra Pradesh</option>
+          <option value="Telangana">Telangana</option>
+        </select>
+        <span class="error" id="state-error"></span><br><br>
+        <label for="country"><b>Country</b></label>
+        <select id="country" aria-placeholder="Choose Your Country">
+          <option value="Choose_country">Choose Your Country</option>
+          <option value="India">India</option>
+          <option value="USA">USA</option>
+        </select>
+        <span class="error" id="country-error"></span><br><br>
+        <label for="languages"><b>Languages Known</b></label>
+        <input type="checkbox" id="telugu" name="telugu" value="tel">
+        <label for="telugu">Telugu</label>
+        <input type="checkbox" id="english" name="english" value="eng">
+        <label for="english">English</label>
+        <input type="checkbox" id="hindi" name="hindi" value="hin">
+        <label for="hindi">Hindi</label>
+        <input type="checkbox" id="kannada" name="kannada" value="kan">
+        <label for="kannada">Kannada</label>
+        <span class="error" id="languages-error"></span><br><br>
+        <input type="checkbox" id="declare" name="declare" value="dec">
+        <label for="declare">Hereby I declare all the given values are true</label>
+        <span class="error" id="declare-error"></span><br><br>
+        <button type="submit" id="register">REGISTER</button>
+      </form>
+    </div>
+
+    <script>
+      const form = document.querySelector('form');
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const fname = document.querySelector('#fname');
+        const lname = document.querySelector('#lname');
+        const mail = document.querySelector('#mail');
+        const password = document.querySelector('#password');
+        const repassword = document.querySelector('#repassword');
+        const gender = document.querySelector('input[name="gender"]:checked');
+        const age = document.querySelector('#age');
+        const pnum = document.querySelector('#pnum');
+        const address = document.querySelector('#address');
+        const state = document.querySelector('#state');
+        const country = document.querySelector('#country');
+        const languages = document.querySelectorAll('input[name="telugu"], input[name="english"], input[name="hindi"], input[name="kannada"]');
+        const declare = document.querySelector('#declare');
+
+        let errors = [];
+
+        if (fname.value.length < 3) {
+          errors.push('First Name is too short');
+          document.querySelector('#fname-error').innerText = 'Poor';
+        } else {
+          document.querySelector('#fname-error').innerText = '';
+        }
+
+        if (lname.value.length < 3) {
+          errors.push('Last Name is too short');
+          document.querySelector('#lname-error').innerText = 'Poor';
+        } else {
+          document.querySelector('#lname-error').innerText = '';
+        }
+
+        if (mail.value === '') {
+          errors.push('Email is required');
+          document.querySelector('#mail-error').innerText = 'Email is required';
+        } else {
+          document.querySelector('#mail-error').innerText = '';
+        }
+
+        if (password.value.length < 6) {
+          errors.push('Password is too short');
+          document.querySelector('#password-error').innerText = 'Poor';
+        } else {
+          document.querySelector('#password-error').innerText = '';
+        }
+
+        if (repassword.value !== password.value) {
+          errors.push('Passwords do not match');
+          document.querySelector('#repassword-error').innerText = 'Passwords do not match';
+        } else {
+          document.querySelector('#repassword-error').innerText = '';
+        }
+
+        if (!gender) {
+          errors.push('Gender is required');
+          document.querySelector('#gender-error').innerText = 'Gender is required';
+        } else {
+          document.querySelector('#gender-error').innerText = '';
+        }
+
+        if (age.value === '') {
+          errors.push('Age is required');
+          document.querySelector('#age-error').innerText = 'Age is required';
+        } else {
+          document.querySelector('#age-error').innerText = '';
+        }
+
+        if (pnum.value.length < 10) {
+          errors.push('Phone Number is too short');
+          document.querySelector('#pnum-error').innerText = 'Poor';
+        } else {
+          document.querySelector('#pnum-error').innerText = '';
+        }
+
+        if (address.value.length < 10) {
+          errors.push('Address is too short');
+          document.querySelector('#address-error').innerText = 'Poor';
+        } else {
+          document.querySelector('#address-error').innerText = '';
+        }
+
+        if (state.value === 'Choose_state') {
+          errors.push('State is required');
+          document.querySelector('#state-error').innerText = 'State is required';
+        } else {
+          document.querySelector('#state-error').innerText = '';
+        }
+
+        if (country.value === 'Choose_country') {
+          errors.push('Country is required');
+          document.querySelector('#country-error').innerText = 'Country is required';
+        } else {
+          document.querySelector('#country-error').innerText = '';
+        }
+
+        if (Array.from(languages).filter(checkbox => checkbox.checked).length === 0) {
+          errors.push('Languages Known is required');
+          document.querySelector('#languages-error').innerText = 'Languages Known is required';
+        } else {
+          document.querySelector('#languages-error').innerText = '';
+        }
+
+        if (!declare.checked) {
+          errors.push('Declaration is required');
+          document.querySelector('#declare-error').innerText = 'Declaration is required';
+        } else {
+          document.querySelector('#declare-error').innerText = '';
+        }
+
+        if (errors.length === 0) {
+          alert('Registration successful!');
+          form.reset();
+        } else {
+          alert('Please fix the errors and try again.');
+        }
+      });
+    </script>
+  </body>
+</html>
