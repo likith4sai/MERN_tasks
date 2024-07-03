@@ -2,9 +2,11 @@
 .App {
   text-align: center;
 }
-
+body {
+  background-color: aliceblue;
+}
 textarea {
-  width: 80%;
+  width: 60%;
   padding: 10px;
   font-size: 16px;
 }

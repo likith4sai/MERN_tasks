@@ -9,14 +9,14 @@ const WordCounter = () => {
     const newText = e.target.value;
     setText(newText);
 
-    // Split the text by spaces and filter out empty strings
+    
     const words = newText.trim().split(/\s+/).filter(word => word.length > 0);
     setWordCount(words.length);
   };
 
   return (
     <div>
-      <h1>Word Counter</h1>
+      <h1> Responsive Paragraph Word Counter</h1>
       <textarea
         value={text}
         onChange={handleChange}
@@ -24,7 +24,7 @@ const WordCounter = () => {
         rows="10"
         cols="50"
       ></textarea>
-      <p>Word Count: {wordCount}</p>
+      <p><b>Word Count:</b> {wordCount}</p>
     </div>
   );
 };
